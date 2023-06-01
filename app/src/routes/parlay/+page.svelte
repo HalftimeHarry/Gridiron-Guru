@@ -1,5 +1,5 @@
 <script>
-	import PredictParlayForm from '/workspace/Gridiron-Guru/app/src/components/PredictGameForm.svelte';
+	import PredictParlayForm from '/workspace/Gridiron-Guru/app/src/components/PredictParlyForm.svelte';
 </script>
 
 <div>
