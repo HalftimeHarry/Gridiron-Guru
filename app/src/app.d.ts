@@ -8,24 +8,30 @@ declare namespace App {
 	// interface Platform {}
 }
 
-export interface PreGameInput {
-  date: string;
-  homeTeam: string;
-  awayTeam: string;
-  spread: number;
-  total: number;
-  moneyLine: number;
-}
-
-export interface Game {
-  date: string;
-  homeTeam: string;
-  awayTeam: string;
-  spread: number;
-  total: number;
-  moneyLine: number;
-  code: string;
-  favorite: boolean;
+export interface PreGame {
+  id: number;
+  season?: string;
+  week?: string;
+  date?: Date;
+  homeTeam?: number;
+  homeScore?: number;
+  homeOpeningSpread?: number;
+  homeClosingSpread?: number;
+  homeOpeningML?: number;
+  homeOpeningMLDecimal?: number;
+  homeClosingML?: number;
+  homeClosingMLDecimal?: number;
+  awayTeam?: number;
+  awayScore?: number;
+  awayOpeningSpread?: number;
+  awayClosingSpread?: number;
+  awayOpeningML?: number;
+  awayOpeningMLDecimal?: number;
+  awayClosingML?: number;
+  awayClosingMLDecimal?: number;
+  openingOUTotal?: number;
+  closingOUTotal?: number;
+  pregame?: boolean;
 }
 
 export interface PredictionInput {

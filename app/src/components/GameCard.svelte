@@ -1,43 +1,23 @@
 <script lang="ts">
-	import { CodeBlock } from '@skeletonlabs/skeleton';
-	import type { Game } from '../app';
-	import { deleteGame, toggleFavorite } from '/workspace/Gridiron-Guru/app/src/stores/GameStore';
-
-	export let game: Game = {
-		date: '',
-		homeTeam: '',
-		awayTeam: '',
-		spread: 0,
-		total: 0,
-		moneyLine: 0,
-		code: '',
-		favorite: true
-	};
-
-	export let index: number;
+	export let game: { id: number; week: string; season: string } | undefined;
 </script>
 
-<div class="card">
-	<header class="card-header">
-		{game.homeTeam}
-		<div class="float-right">
-			<button
-				type="button"
-				class="btn btn-sm variant-filled-secondary"
-				on:click={() => toggleFavorite(index)}
-			>
-				{game.favorite ? 'Unfavorite' : 'Favorite'}
-			</button>
-			<button
-				type="button"
-				class="btn btn-sm variant-filled-error"
-				on:click={() => deleteGame(index)}
-			>
-				X
-			</button>
-		</div>
-	</header>
-	<section class="p-4">
-		<CodeBlock language={game.homeTeam} code={game.code} />
-	</section>
-</div>
+{#if game}
+	<div class="game-card">
+		<h2>{game.week}</h2>
+		<p>{game.season}</p>
+	</div>
+{/if}
+
+<style>
+	.game-card {
+		border: 1px solid #ccc;
+		padding: 1em;
+		margin-bottom: 1em;
+		border-radius: 5px;
+	}
+
+	.game-card h2 {
+		margin-top: 0;
+	}
+</style>
