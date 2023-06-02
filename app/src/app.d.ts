@@ -34,6 +34,32 @@ export interface PreGame {
   pregame?: boolean;
 }
 
+	export interface PreGameInput {
+		id: number;
+		season: string;
+		week: string;
+		date: string;
+		homeScore: number;
+		awayScore: number;
+		homeTeam: number | undefined;
+		awayTeam: number | undefined;
+		homeOpeningSpread: number;
+		homeClosingSpread: number;
+		homeOpeningML: number;
+		homeOpeningMLDecimal: number;
+		homeClosingML: number;
+		homeClosingMLDecimal: number;
+		awayOpeningSpread: number;
+		awayClosingSpread: number;
+		awayOpeningML: number;
+		awayOpeningMLDecimal: number;
+		awayClosingML: number;
+		awayClosingMLDecimal: number;
+		openingOUTotal: number;
+		closingOUTotal: number;
+		pregame: boolean;
+	}
+
 export interface PredictionInput {
   selectedTeam: 'home' | 'away';
   pastGameAmount: number;
