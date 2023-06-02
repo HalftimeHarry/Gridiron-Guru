@@ -18,6 +18,8 @@
 		home_closing_spread: number;
 		away_opening_spread: number;
 		away_closing_spread: number;
+		away_opening_ml: number;
+		opening_o_u_total: number;
 	}
 
 	let pregameInput: Partial<PreGameInput> = {};
@@ -100,29 +102,60 @@
 		</select>
 	</div>
 	<div class="mb-4">
-		<label class="block mb-2" for="homeOpeningSpread"> Home Opening Spread: </label>
+		<label class="block mb-2" for="awayOpeningSpread"> Away Opening Spread: </label>
 		<input
-			id="homeOpeningSpread"
+			id="awayOpeningSpread"
 			class="w-full p-2 border rounded-md text-black"
 			type="number"
-			step="0.1"
-			bind:value={pregameInput.home_opening_spread}
+			step="0.5"
+			bind:value={pregameInput.away_opening_spread}
 			required
 		/>
 	</div>
 	<div class="mb-4">
-		<label class="block mb-2" for="homeClosingSpread"> Home Closing Spread: </label>
+		<label class="block mb-2" for="week"> Week: </label>
 		<input
-			id="homeClosingSpread"
+			id="week"
+			class="w-full p-2 border rounded-md text-black"
+			type="text"
+			bind:value={pregameInput.week}
+			required
+		/>
+	</div>
+	<div class="mb-4">
+		<label class="block mb-2" for="date"> Date: </label>
+		<input
+			id="date"
+			class="w-full p-2 border rounded-md text-black"
+			type="date"
+			bind:value={pregameInput.date}
+			required
+		/>
+	</div>
+	<div class="mb-4">
+		<label class="block mb-2" for="openingOUTotal"> Opening O/U Total: </label>
+		<input
+			id="openingOUTotal"
 			class="w-full p-2 border rounded-md text-black"
 			type="number"
-			step="0.1"
-			bind:value={pregameInput.home_closing_spread}
+			step="0.01"
+			bind:value={pregameInput.opening_o_u_total}
+			required
+		/>
+	</div>
+	<div class="mb-4">
+		<label class="block mb-2" for="awayOpeningML"> Away Opening ML: </label>
+		<input
+			id="awayOpeningML"
+			class="w-full p-2 border rounded-md text-black"
+			type="number"
+			step="0.01"
+			bind:value={pregameInput.away_opening_ml}
 			required
 		/>
 	</div>
 
-	<button class="w-full p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600" type="submit"
-		>Submit</button
-	>
+	<button class="w-full p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600" type="submit">
+		Submit
+	</button>
 </form>

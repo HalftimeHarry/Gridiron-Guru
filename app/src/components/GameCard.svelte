@@ -18,6 +18,9 @@
 	<div class="game-card">
 		<h2>{game.week}</h2>
 		<p>{game.season}</p>
+		<p>{game.away_opening_spread}</p>
+		<p>{game.opening_o_u_total}</p>
+		<p>{game.away_opening_ml}</p>
 		<input type="checkbox" on:click={() => handleDelete(game.id)} />
 		<button on:click={() => handleDelete(game.id)}>Delete</button>
 	</div>
